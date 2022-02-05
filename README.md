@@ -46,3 +46,8 @@
 - style : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
 - refactor : 코드 리펙토링
 - chore : 빌드 업무 수정, 패키지 매니저 수정
+
+<br>
+
+## 🌐 출처
+https://www.youtube.com/watch?v=F2JCjVSZlG0
