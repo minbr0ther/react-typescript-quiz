@@ -1,10 +1,12 @@
 import React from "react";
+import { AnswerObject } from "../App";
 
 type Props = {
   question: string;
   answers: string[];
-  callback: any;
-  userAnswer: any;
+  // 처음에는 any type으로 명시해놓고 나중에 구현을해서 구체화한다 (?)
+  callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  userAnswer: AnswerObject | undefined;
   questionNr: number;
   totalQuestions: number;
 };
@@ -26,7 +28,8 @@ const QuestionCard: React.FC<Props> = ({
       <div>
         {answers.map((answer, index) => (
           <div key={index}>
-            <button disabled={userAnswer} value={answer} onClick={callback}>
+            {/* !! => boolean type 변환 || userAnswer ? true : false  */}
+            <button disabled={!!userAnswer} value={answer} onClick={callback}>
               <span dangerouslySetInnerHTML={{ __html: answer }} />
             </button>
           </div>
